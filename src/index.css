@@ -1,0 +1,16 @@
+body {
+  margin: 0;
+  font-family: Rubik, Arial, sans-serif;
+  max-width: 1920px;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #eeeeee;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+.link {
+  text-decoration: none;
+  color: inherit;
+}
