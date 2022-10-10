@@ -2,7 +2,7 @@ import NavBarInterna from '../../../componentes/navbar/navbarInterna';
 import nookies from 'nookies';
 import { BoxNavbar } from '../styledLogin';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import { Link, Navigate } from 'react-router-dom';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
 import { Alert, Button, TextField } from '@mui/material';
 import { useState } from 'react';
 import axios from 'axios';
@@ -13,7 +13,8 @@ const Registrar = () => {
   const [senha, setSenha] = useState<string>();
   const [nome, setNome] = useState<string>();
   const [foto, setFoto] = useState<string>();
-  const [cadastroConcluido, setCadastroConcluido] = useState(false);
+  const navigate = useNavigate();
+
   const [infosInvalidas, setInfosInvalidas] = useState(false);
 
   const UrlImagem =
@@ -21,8 +22,6 @@ const Registrar = () => {
   return (
     <div>
       <BoxNavbar>
-        {cadastroConcluido ? <Navigate to="/passaporte" /> : ''}
-
         <div>
           <NavBarInterna />
         </div>
@@ -114,7 +113,7 @@ const Registrar = () => {
                     .then((resposta) => {
                       if (resposta.status === 200) {
                         nookies.set(null, 'TOKEN', resposta.data.token);
-                        setCadastroConcluido(true);
+                        navigate('/passaporte');
                       }
                     })
                     .catch(() => setInfosInvalidas(true));

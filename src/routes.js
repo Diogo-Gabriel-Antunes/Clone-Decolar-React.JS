@@ -13,6 +13,7 @@ import Passaporte from './pages/passaporte';
 import Passeios from './pages/passeios';
 import PasseiosPorRegiao from './pages/passeios/passeiosPorRegiao';
 import Registrar from './pages/login/cadastro';
+import PrivateRoute from './PrivateRoute';
 
 const AppRouter = () => {
   return (
@@ -34,7 +35,14 @@ const AppRouter = () => {
         <Route path="/passeios/:destino" element={<PasseiosPorRegiao />} />
         <Route path="/login" element={<Login />} />
         <Route path="/registrar" element={<Registrar />} />
-        <Route path="/passaporte" element={<Passaporte />} />
+        <Route
+          path="/passaporte"
+          element={
+            <PrivateRoute>
+              <Passaporte />
+            </PrivateRoute>
+          }
+        />
       </Routes>
     </BrowserRouter>
   );

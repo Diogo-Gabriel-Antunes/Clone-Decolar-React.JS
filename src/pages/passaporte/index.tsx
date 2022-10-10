@@ -11,7 +11,6 @@ import IRecomendacoes from '../../interfaces/IRecomendacoes';
 import CardRecomendacoes from '../../componentes/cardRecomendacoes';
 import Footer from '../../componentes/Footer';
 import { useNavigate } from 'react-router-dom';
-import { isAuthenticated } from '../../auth/auth';
 
 const Passaporte = () => {
   const recomendacoes: IRecomendacoes[] = [
@@ -72,11 +71,9 @@ const Passaporte = () => {
   ];
   let payload: payload;
   const navigate = useNavigate();
-  try {
-    const token = nookies.get(null).TOKEN;
-    payload = jwt_decode(token);
-  } catch (erro) {
-    navigate('/login');
+
+  if (nookies.get(null).TOKEN) {
+    payload = jwt_decode(nookies.get(null).TOKEN);
   }
 
   const [usuario, setUsuario] = useState<IUsuario>();
@@ -91,17 +88,9 @@ const Passaporte = () => {
     'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MiIgaGVpZ2h0PSI1NiIgdmlld0JveD0iMCAwIDQyIDU2Ij4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPHBhdGggZmlsbD0iI0ZGQkNCRiIgZD0iTS45OTcgNy4zNThDMjQuMDk0IDIuNDkzIDM1Ljc4Mi4wNDcgMzYuMDYuMDJjLjQxNi0uMDQgMS42OTgtLjE2NSAxLjY5OCAxLjM3NXY4LjA2MkguOTg4Qy41NSA5LjQ1NyAwIDkuMzY3IDAgOC40NDVjMC0uNjE0LjMzMi0uOTc2Ljk5Ny0xLjA4N3oiLz4KICAgICAgICA8cGF0aCBmaWxsPSIjRkZGIiBkPSJNMCA4LjQzNGMuMDI0LjY0OS4zNTMuOTg2Ljk4OCAxLjAxMmgzOS43ODZjLjUzIDAgLjk1OC40MjkuOTU4Ljk1OHY0NC42MzdjMCAuNTMtLjQyOS45NTktLjk1OC45NTlINS4yNUE1LjI1IDUuMjUgMCAwIDEgMCA1MC43NVY4LjQzNHoiLz4KICAgICAgICA8cGF0aCBmaWxsPSIjRkZCQ0JGIiBkPSJNOS45MzYgNDMuODU1aDEwLjc2YzYuMTMgMCAxMS4xLTUuMjEgMTEuMS0xMS42MzhzLTQuOTctMTEuNjM5LTExLjEtMTEuNjM5SDkuOTM2djIzLjI3N3oiLz4KICAgICAgICA8cGF0aCBmaWxsPSIjRkY3QTgwIiBkPSJNOS45OSAyMC41NzhoLS4wNTR2MjMuMjc3aC4wNTRjNi4zNzMgMCAxMS41MzktNS4yMSAxMS41MzktMTEuNjM4UzE2LjM2MyAyMC41NzggOS45OSAyMC41NzgiLz4KICAgIDwvZz4KPC9zdmc+Cg==';
 
   useEffect(() => {
-    if (payload) {
-      isAuthenticated().then(({ data }) => {
-        nookies.set(null, 'TOKEN', data.token);
-        nookies.set(null, 'TOKEN_REFRESH', data.refreshToken);
-      });
-      axios
-        .get(`http://localhost:8080/usuarios/${payload.id}`)
-        .then((resposta) => setUsuario(resposta.data.usuario));
-    } else {
-      navigate('/login');
-    }
+    axios
+      .get(`http://localhost:8080/usuarios/${payload?.id}`)
+      .then((resposta) => setUsuario(resposta.data.usuario));
   }, []);
   return (
     <div>
