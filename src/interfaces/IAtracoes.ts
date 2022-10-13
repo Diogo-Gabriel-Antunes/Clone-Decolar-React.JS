@@ -1,3 +1,5 @@
+import { IImagens } from './IMagens';
+
 export default interface IAtracoes {
   id: number;
   imagem: string;
@@ -8,4 +10,8 @@ export default interface IAtracoes {
   preco: number;
   createdAt: string;
   updatedAt: string;
+  imagens: IImagens[];
+  descricao: string;
+  duracao: string;
+  quantidadeDeDias: number;
 }

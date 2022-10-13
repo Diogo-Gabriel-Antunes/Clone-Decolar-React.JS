@@ -10,7 +10,6 @@ import nookies from 'nookies';
 import { payload } from '../../../interfaces/Payload';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import IUsuario from '../../../interfaces/IUsuario';
 
 const NavBarInterna = () => {
   const token = nookies.get(null).TOKEN;
@@ -53,10 +52,12 @@ const NavBarInterna = () => {
               </Link>
             )}
           </Box>
-          <Box>
-            <BackpackIcon sx={{ color: '#444444' }} />
-            <p>Minha viagens</p>
-          </Box>
+          <Link to="/minhasviagens" className="link">
+            <Box>
+              <BackpackIcon sx={{ color: '#444444' }} />
+              <p>Minha viagens</p>
+            </Box>
+          </Link>
           <Box>
             <HelpIcon sx={{ color: '#444444' }} />
             <p>Ajuda</p>

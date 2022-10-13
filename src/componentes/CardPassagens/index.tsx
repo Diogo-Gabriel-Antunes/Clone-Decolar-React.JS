@@ -15,7 +15,11 @@ const CardPassagens = ({ passagens }: props) => {
         ? passagens.map((item) => (
             <CardPassagensBox elevation={8} sx={{ mb: 4 }} key={item.id}>
               <div className="container__grid">
-                <img src={item.imagemCompanhia} alt="" />
+                <img
+                  src={item.imagemCompanhia}
+                  alt=""
+                  className="imagemCompanhia"
+                />
                 <div className="origem">
                   <p>
                     <ConnectingAirportsIcon /> IDA : {item.destino}

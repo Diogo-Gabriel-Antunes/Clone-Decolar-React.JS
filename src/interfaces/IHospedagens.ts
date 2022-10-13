@@ -1,3 +1,6 @@
+import { IMinhasViagens } from './IMinhasViagens';
+import { IQuartos } from './IQuartos';
+
 export default interface IHospedagem {
   id: number;
   nome: string;
@@ -9,4 +12,9 @@ export default interface IHospedagem {
   imagem: string;
   createdAt: string;
   updatedAt: string;
+  imagens: IMinhasViagens[];
+  localizacao: string;
+  comentarios: number;
+  dataRef: string;
+  quartos: IQuartos[];
 }

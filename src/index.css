@@ -5,6 +5,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: #eeeeee;
 }
+*{
+  font-family: 'Rubik', sans-serif;
+}
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",

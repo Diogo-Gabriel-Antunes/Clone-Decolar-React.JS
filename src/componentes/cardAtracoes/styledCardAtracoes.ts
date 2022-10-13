@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const CardAtracoesBox = styled.div`
   padding: 8px;
@@ -18,7 +18,7 @@ export const CardAtracoesBox = styled.div`
   .conteudo__container {
     margin-top: -3.9px;
     padding: 8px;
-    border: 0.001px solid #666;
+    border: 0.001px solid #ccc;
     .conteudo__segundoContainer {
       display: flex;
       margin-top: -16px;
@@ -50,7 +50,7 @@ export const CardAtracoesBox = styled.div`
   .conteudo__preco {
     color: #444;
     padding: 8px;
-    border: 1px solid #444;
+    border: 1px solid #ccc;
 
     border-top: 0px;
     div {
@@ -78,7 +78,7 @@ export const CardAtracoesBox = styled.div`
     display: flex;
     align-items: center;
     padding: 8px;
-    border: 1px solid #444;
+    border: 1px solid #ccc;
     border-top: 0px;
     img {
       width: 18px;
@@ -95,7 +95,7 @@ export const CardAtracoesBox = styled.div`
     padding: 8px;
     display: flex;
     align-items: center;
-    border: 1px solid #444;
+    border: 1px solid #ccc;
     border-top: 0px;
     svg {
       width: 16px;

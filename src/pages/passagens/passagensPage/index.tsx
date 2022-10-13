@@ -76,11 +76,6 @@ const PagePassagens = () => {
         <NavBarComponent passagens={true} />
       </div>
       <PassagensBox>
-        <div className="Caminho">
-          <p className="Caminho__paragrafo">
-            Decolar : Passagens : <strong>Passagens areas </strong>
-          </p>
-        </div>
         <h1>Passagens</h1>
 
         <div className="container__grid">

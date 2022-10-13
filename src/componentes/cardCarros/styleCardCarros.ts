@@ -32,7 +32,7 @@ export const CardBoxCarros = styled.div`
   .opcoes {
     display: flex;
     align-items: center;
-    margin-left: -124px;
+    margin-left: -100px;
     margin-top: 34px;
     svg {
       width: 20px;
@@ -53,7 +53,7 @@ export const CardBoxCarros = styled.div`
   }
   .locadora {
     margin-top: 20px;
-    margin-left: -116px;
+    margin-left: -100px;
   }
   .div__precos {
     width: 240px;

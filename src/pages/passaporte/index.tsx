@@ -106,7 +106,7 @@ const Passaporte = () => {
             <div className="passaporte__container__title">
               <h1 className="titulo__meuPassaporte">Meu passaporte</h1>
               <h1 className="titulo__nome">
-                {usuario?.nome}{' '}
+                {usuario?.nome.toUpperCase()}
                 <Button
                   variant="contained"
                   color="warning"
@@ -194,9 +194,8 @@ const Passaporte = () => {
           <div className="recomendacoes">
             <h2>Troque seus pontos por qualquer produto Decolar</h2>
           </div>
-          <div className="carrossel__container">
-            <CardRecomendacoes recomendacoes={recomendacoes} />
-          </div>
+
+          <CardRecomendacoes recomendacoes={recomendacoes} />
         </div>
       </PassaporteBox>
       <Footer />

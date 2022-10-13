@@ -2,7 +2,8 @@ import { Card } from '@mui/material';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import CardHoteis from '../../componentes/CardHoteis';
+import CardHospedagem from '../../componentes/CardHoteis';
+
 import Footer from '../../componentes/Footer';
 import FormularioHospedagem from '../../componentes/FormularioHospedagem';
 import NavBarComponent from '../../componentes/navbar';
@@ -14,7 +15,6 @@ const Hospedagem = () => {
   const [destino, setDestino] = useState('');
   const parametros = useParams();
 
-  console.log(parametros);
   useEffect(() => {
     axios
       .get(
@@ -62,7 +62,7 @@ const Hospedagem = () => {
             opção para sua viagem.
           </p>
         </div>
-        <CardHoteis hoteis={hoteis} />
+        <CardHospedagem hoteis={hoteis} />
       </HospedagemBox>
       <Footer />
     </div>

@@ -2,7 +2,7 @@ import NavBarInterna from '../../../componentes/navbar/navbarInterna';
 import nookies from 'nookies';
 import { BoxNavbar } from '../styledLogin';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import { Link, Navigate, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Alert, Button, TextField } from '@mui/material';
 import { useState } from 'react';
 import axios from 'axios';

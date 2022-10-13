@@ -11,4 +11,5 @@ export default interface ICarros {
   createdAt: string;
   updatedAt: string;
   locadora: string;
+  imagens: string[];
 }

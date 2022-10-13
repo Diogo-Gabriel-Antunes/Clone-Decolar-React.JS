@@ -1,5 +1,5 @@
-import { Paper } from "@mui/material";
-import styled from "styled-components";
+import { Paper } from '@mui/material';
+import styled from 'styled-components';
 
 export const CardPassagensBox = styled(Paper)`
   padding: 32px;

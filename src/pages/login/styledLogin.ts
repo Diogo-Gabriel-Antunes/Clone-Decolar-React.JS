@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const BoxNavbar = styled.div`
   background-color: #fff;
@@ -8,11 +8,11 @@ export const BoxNavbar = styled.div`
 export const BoxLogin = styled.div`
   display: grid;
   grid-template-columns: 1fr 348px 1fr;
-  grid-template-areas: ". box .";
+  grid-template-areas: '. box .';
   .Login__form {
     grid-area: box;
     background-color: #fff;
-    height: 450px;
+    height: 100%;
     margin-top: 30px;
     border-radius: 6px;
     padding: 8px 16px;

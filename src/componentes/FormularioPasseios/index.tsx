@@ -4,12 +4,11 @@ import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 import SearchIcon from '@mui/icons-material/Search';
-import { FormularioPasseios } from './styledFormularioPasseios';
-
+import { FormAtracoes } from './styledFormularioPasseios';
 interface props {
   onView?: React.Dispatch<React.SetStateAction<boolean>> | undefined;
 }
-const FormularioPasseio = ({ onView }: props) => {
+const FormularioAtracoes = ({ onView }: props) => {
   const [destino, setDestino] = useState('');
 
   return (
@@ -20,7 +19,7 @@ const FormularioPasseio = ({ onView }: props) => {
         </div>
         <br />
         <div>
-          <FormularioPasseios>
+          <FormAtracoes>
             <div className="containerFormulario">
               <div className="div_destino">
                 <label htmlFor="destino" className="destino">
@@ -80,11 +79,11 @@ const FormularioPasseio = ({ onView }: props) => {
               </div>
             </div>
             <br />
-          </FormularioPasseios>
+          </FormAtracoes>
         </div>
       </BoxOpions>
     </FormBox>
   );
 };
 
-export default FormularioPasseio;
+export default FormularioAtracoes;

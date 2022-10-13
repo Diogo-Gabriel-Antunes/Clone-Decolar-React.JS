@@ -30,7 +30,9 @@ const AlugueisCasaCards = () => {
         <FormularioAlugueis />
       </div>
       <HospedagemBox>
-        <span>Decolar : Hoteis : Hoteis em Brasil : Hoteis em São paulo</span>
+        <span>
+          Decolar : Hoteis : Hoteis em Brasil : Hoteis em {parametros.destino}
+        </span>
         <Card className="Card">
           <div className="div__Botao first">
             <span className="Botao">
@@ -57,8 +59,8 @@ const AlugueisCasaCards = () => {
           <h3>Ofertas de hoteis populares</h3>
           <p>
             {' '}
-            Estes são os hotéis mais populares em São Paulo. Encontre a melhor
-            opção para sua viagem.
+            Estes são os hotéis mais populares em {parametros.destino}. Encontre
+            a melhor opção para sua viagem.
           </p>
         </div>
         <CardAlugueisCasa casaAlugueis={casaAlugueis} />

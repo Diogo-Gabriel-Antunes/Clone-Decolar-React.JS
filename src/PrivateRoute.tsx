@@ -1,5 +1,5 @@
 import { ReactNode, useEffect, useState } from 'react';
-import { Navigate } from 'react-router-dom';
+import { Navigate, useNavigate } from 'react-router-dom';
 import { isAuthenticated } from './auth/auth';
 
 interface Props {
@@ -7,15 +7,17 @@ interface Props {
 }
 const PrivateRoute = ({ children }: Props) => {
   const [user, setUser] = useState<boolean>();
+  const navigate = useNavigate();
   useEffect(() => {
     isAuthenticated()
       .then((resposta) => setUser(!resposta.data.auth))
       .catch((erro) => {
         console.log(erro);
-        setUser(true);
+        navigate('/login');
+        setUser(!erro.response.data.auth);
       });
   });
-  return user ? <Navigate to="/login" /> : children;
+  return user ? <Navigate to="/login" replace={true} /> : children;
 };
 
 export default PrivateRoute;

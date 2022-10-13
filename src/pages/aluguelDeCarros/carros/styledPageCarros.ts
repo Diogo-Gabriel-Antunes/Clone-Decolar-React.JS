@@ -1,8 +1,8 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const CarrosBox = styled.div`
   margin-left: 315px;
-
+  padding: 0 12px;
   .Caminho {
     .Caminho__paragrafo {
       color: blue;

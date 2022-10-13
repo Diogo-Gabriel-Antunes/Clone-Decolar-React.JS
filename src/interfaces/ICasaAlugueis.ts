@@ -1,3 +1,7 @@
+import { IMinhasViagens } from './IMinhasViagens';
+
+import { IQuartos } from './IQuartos';
+
 export default interface ICasaAlugueis {
   id: number;
   nome: string;
@@ -8,4 +12,7 @@ export default interface ICasaAlugueis {
   imagem: string;
   createdAt: string;
   updatedAt: string;
+  imagens: IMinhasViagens[];
+  destino: string;
+  quartos: IQuartos[];
 }

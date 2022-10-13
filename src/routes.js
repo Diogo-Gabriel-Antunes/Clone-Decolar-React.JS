@@ -10,10 +10,14 @@ import Login from './pages/login';
 import Passagens from './pages/passagens';
 import PagePassagens from './pages/passagens/passagensPage';
 import Passaporte from './pages/passaporte';
-import Passeios from './pages/passeios';
-import PasseiosPorRegiao from './pages/passeios/passeiosPorRegiao';
 import Registrar from './pages/login/cadastro';
 import PrivateRoute from './PrivateRoute';
+import MinhasViagens from './pages/minhasViagens';
+import HospedagemId from './pages/Hospedagem/HospedagemID';
+import CasaId from './pages/AlugueisCasa/alugueis/casaId';
+import Atracoes from './pages/atracoes';
+import AtracoesPorRegiao from './pages/atracoes/atracoesPorRegiao';
+import AtracoesId from './pages/atracoes/atracoesPorRegiao/atracoesId';
 
 const AppRouter = () => {
   return (
@@ -21,6 +25,7 @@ const AppRouter = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/hospedagem/:localizacao" element={<Hospedagem />} />
+        <Route path="/hospedagem/:localizacao/:id" element={<HospedagemId />} />
         <Route path="/carros" element={<AluguelDeCarrosHome />} />
         <Route path="/carros/:localDeRetirada" element={<PageCarros />} />
         <Route path="/passagens" element={<Passagens />} />
@@ -31,8 +36,10 @@ const AppRouter = () => {
         <Route path="/passagens/:destino/:origem" element={<PagePassagens />} />
         <Route path="/alugueiscasa" element={<AlugueisCasa />} />
         <Route path="/alugueiscasa/:destino" element={<AlugueisCasaCards />} />
-        <Route path="/passeios" element={<Passeios />} />
-        <Route path="/passeios/:destino" element={<PasseiosPorRegiao />} />
+        <Route path="/alugueiscasa/:destino/:id" element={<CasaId />} />
+        <Route path="/passeios" element={<Atracoes />} />
+        <Route path="/passeios/:destino" element={<AtracoesPorRegiao />} />
+        <Route path="/passeios/:destino/:id" element={<AtracoesId />} />
         <Route path="/login" element={<Login />} />
         <Route path="/registrar" element={<Registrar />} />
         <Route
@@ -40,6 +47,14 @@ const AppRouter = () => {
           element={
             <PrivateRoute>
               <Passaporte />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/minhasviagens"
+          element={
+            <PrivateRoute>
+              <MinhasViagens />
             </PrivateRoute>
           }
         />

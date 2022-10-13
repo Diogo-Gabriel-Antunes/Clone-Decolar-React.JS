@@ -1,6 +1,6 @@
 import { CardBox } from '../CardHoteis/styledCardHoteis';
 import StarIcon from '@mui/icons-material/Star';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import ICasaAlugueis from '../../interfaces/ICasaAlugueis';
 
 interface props {
@@ -8,6 +8,8 @@ interface props {
 }
 
 const CardAlugueisCasa = ({ casaAlugueis }: props) => {
+  const { destino } = useParams();
+  console.log(casaAlugueis);
   return (
     <div>
       {casaAlugueis
@@ -37,7 +39,10 @@ const CardAlugueisCasa = ({ casaAlugueis }: props) => {
                   <span className="preco">{item.preco}</span>
                 </div>
                 <div className="botao">
-                  <Link to="" className="link">
+                  <Link
+                    to={`/alugueiscasa/${destino}/${item.id}`}
+                    className="link"
+                  >
                     <button>
                       <strong>Ver detalhes</strong>
                     </button>

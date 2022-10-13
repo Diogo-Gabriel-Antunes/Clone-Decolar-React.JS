@@ -200,7 +200,7 @@ export const PassaporteBox = styled.div`
     }
     .carrossel__container {
       position: relative;
-      max-width: 720px;
+      max-width: 1280px;
       scroll-behavior: smooth;
       height: 500px;
       .carrossel__wrapper {

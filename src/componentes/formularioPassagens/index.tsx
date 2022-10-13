@@ -43,21 +43,21 @@ const FormularioPassagens = () => {
           <div>
             <div>
               <OptionPassagens
-                width={104}
+                width={112}
                 ativo={todos}
                 onClick={() => (todos ? '' : handleClickTodos())}
               >
                 <span>Ida e volta</span>
               </OptionPassagens>
               <OptionPassagens
-                width={80}
+                width={103}
                 ativo={hoteis}
                 onClick={() => (hoteis ? '' : handleClickHoteis())}
               >
                 <span>So ida</span>
               </OptionPassagens>
               <OptionPassagens
-                width={118}
+                width={128}
                 ativo={alugueis}
                 onClick={() => (alugueis ? '' : handleClickAlugueis())}
               >

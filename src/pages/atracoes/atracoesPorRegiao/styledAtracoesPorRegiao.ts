@@ -1,6 +1,6 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-export const PasseiosPorRegiãoBox = styled.div`
+export const AtracoesPorRegiãoBox = styled.div`
   .localizacao {
     background-color: #4300d2;
     .localizacao__container {

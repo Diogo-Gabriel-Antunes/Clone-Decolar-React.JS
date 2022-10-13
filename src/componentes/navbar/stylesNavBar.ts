@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Logo = styled.img`
   width: 70px;
@@ -39,7 +39,7 @@ export const Conteudo = styled.div`
   display: flex;
   align-items: center;
   border-radius: 0px 0px 20px 20px;
-
+  min-width: 900px;
   width: 100vh;
   margin-block-start: 1em;
   margin-block-end: 1em;

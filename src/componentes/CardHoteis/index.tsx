@@ -7,7 +7,7 @@ interface props {
   hoteis: IHospedagem[] | undefined;
 }
 
-const CardHoteis = ({ hoteis }: props) => {
+const CardHospedagem = ({ hoteis }: props) => {
   return (
     <div>
       {hoteis
@@ -37,7 +37,7 @@ const CardHoteis = ({ hoteis }: props) => {
                   <span className="preco">{item.preco}</span>
                 </div>
                 <div className="botao">
-                  <Link to="" className="link">
+                  <Link to={`${item.id}`} className="link">
                     <button>
                       <strong>Ver detalhes</strong>
                     </button>
@@ -66,4 +66,4 @@ const CardHoteis = ({ hoteis }: props) => {
   );
 };
 
-export default CardHoteis;
+export default CardHospedagem;

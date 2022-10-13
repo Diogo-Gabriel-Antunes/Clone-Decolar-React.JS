@@ -1,18 +1,14 @@
 import {
   Button,
   FormControl,
-  FormControlLabel,
-  Grow,
   InputLabel,
   MenuItem,
-  Popover,
   Select,
-  Switch,
   TextField,
 } from '@mui/material';
 import { Link, useParams } from 'react-router-dom';
 import NavBarComponent from '../../../componentes/navbar';
-import { PasseiosPorRegiãoBox } from './styledPasseiosPorRegiao';
+import { AtracoesPorRegiãoBox } from './styledAtracoesPorRegiao';
 import SearchIcon from '@mui/icons-material/Search';
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 import { useEffect, useState } from 'react';
@@ -25,9 +21,9 @@ import axios from 'axios';
 import CardAtracoes from '../../../componentes/cardAtracoes';
 import IAtracoes from '../../../interfaces/IAtracoes';
 import Footer from '../../../componentes/Footer';
-import FormularioPasseio from '../../../componentes/FormularioPasseios';
+import FormularioAtracoes from '../../../componentes/FormularioPasseios';
 
-const PasseiosPorRegiao = () => {
+const AtracoesPorRegiao = () => {
   const parametros = useParams();
   const [ida, setIda] = useState<Dayjs | null>();
   const [volta, setVolta] = useState<Dayjs | null>();
@@ -47,10 +43,10 @@ const PasseiosPorRegiao = () => {
       <div>
         <NavBarComponent passeios={true} />
       </div>
-      <PasseiosPorRegiãoBox>
+      <AtracoesPorRegiãoBox>
         {ativo ? (
           <>
-            <FormularioPasseio onView={setAtivo} />
+            <FormularioAtracoes onView={setAtivo} />
           </>
         ) : (
           <>
@@ -83,7 +79,8 @@ const PasseiosPorRegiao = () => {
 
         <div className="CaminhoPercorrido">
           <p>
-            Decolar : Passeios : <strong>Passeios em Balneario Camboriu</strong>
+            Decolar : Passeios :{' '}
+            <strong>Passeios em {parametros.destino}</strong>
           </p>
         </div>
         <div className="Formulario">
@@ -204,15 +201,18 @@ const PasseiosPorRegiao = () => {
           </FormControl>
         </div>
         <div className="titulo__container">
-          <h1> {atracoes?.length} Atrações em Balneario Camboriu,Brasil</h1>
+          <h1>
+            {' '}
+            {atracoes?.length} Atrações em {parametros.destino}
+          </h1>
           <h2>Atrações recomendadas</h2>
         </div>
 
         <CardAtracoes atracoes={atracoes} />
-      </PasseiosPorRegiãoBox>
+      </AtracoesPorRegiãoBox>
       <Footer />
     </div>
   );
 };
 
-export default PasseiosPorRegiao;
+export default AtracoesPorRegiao;
