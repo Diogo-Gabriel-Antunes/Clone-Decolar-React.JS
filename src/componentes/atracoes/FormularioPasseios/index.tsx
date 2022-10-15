@@ -1,4 +1,4 @@
-import { BoxOpions, FormBox } from '../../pages/home/stylesHome';
+import { BoxOpions, FormBox } from '../../../pages/home/stylesHome';
 import { Button } from '@mui/material';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';

@@ -8,8 +8,8 @@ import {
 import Footer from '../../componentes/Footer';
 
 import NavBarComponent from '../../componentes/navbar';
-import FormularioPasseio from '../../componentes/FormularioPasseios';
 import { useState } from 'react';
+import FormularioAtracoes from '../../componentes/atracoes/FormularioPasseios';
 
 const Atracoes = () => {
   const [ativo, setAtivo] = useState(true);
@@ -18,7 +18,7 @@ const Atracoes = () => {
       <div>
         <NavBarComponent passeios={true} />
       </div>
-      <FormularioPasseio onView={setAtivo} />
+      <FormularioAtracoes onView={setAtivo} />
       <ImagensBox>
         <div className="div__semanadoturismo">
           <img

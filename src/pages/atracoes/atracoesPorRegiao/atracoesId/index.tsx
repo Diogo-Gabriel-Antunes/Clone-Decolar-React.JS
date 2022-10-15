@@ -13,24 +13,15 @@ import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import DirectionsBusIcon from '@mui/icons-material/DirectionsBus';
 import LocalActivityIcon from '@mui/icons-material/LocalActivity';
 import CheckIcon from '@mui/icons-material/Check';
-import { Button, TextField } from '@mui/material';
-import OpcoesCardAtracoes from '../../../../componentes/OpcoesCardAtracoes';
+import { Button } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
-
-const transformaEmArray = (quantidadeDeDias: number | undefined) => {
-  const array: number[] = [];
-  if (quantidadeDeDias) {
-    for (let index = 0; index < quantidadeDeDias; index++) {
-      array.push(index);
-    }
-  }
-  return array;
-};
+import Footer from '../../../../componentes/Footer';
+import OpcoesCardAtracoes from '../../../../componentes/atracoes/OpcoesCardAtracoes';
 
 const AtracoesId = () => {
   const [atracao, setAtracao] = useState<IAtracoes | undefined>();
   const parametros = useParams();
-  const arrayQuantidadeDeDias = transformaEmArray(atracao?.quantidadeDeDias);
+  console.log(atracao);
   useEffect(() => {
     axios
       .get(`http://localhost:8080/atracoes/${parametros.id}`)
@@ -101,7 +92,9 @@ const AtracoesId = () => {
                       my: 2,
                     }}
                   >
-                    Ver opções
+                    <a href="#opcoes" className="link">
+                      Ver opções
+                    </a>
                   </Button>
                 </div>
               </div>
@@ -124,15 +117,11 @@ const AtracoesId = () => {
           </div>
         </div>
         <AtracaoOpcoesBox>
-          <div className="opcoes__container">
+          <div className="opcoes__container" id="opcoes">
             <h2>Confira as opções desta atração e escolha a sua!</h2>
 
-            {arrayQuantidadeDeDias?.map((item: number) => (
-              <OpcoesCardAtracoes
-                atracao={atracao}
-                arrayQuantidadeDeDias={item}
-                key={item}
-              />
+            {atracao?.opcoes.map((item, index) => (
+              <OpcoesCardAtracoes opcoes={item} atracao={atracao} key={index} />
             ))}
           </div>
         </AtracaoOpcoesBox>
@@ -203,6 +192,7 @@ const AtracoesId = () => {
           </div>
         </AtracaoSaberAntesDeComprarBox>
       </AtracoesIdBox>
+      <Footer />
     </div>
   );
 };

@@ -27,44 +27,46 @@ const NavBarInterna = () => {
     }
   }, []);
   return (
-    <NavbarContainer>
-      <div>
-        <Link to="/">
-          <Logo src={LogoDiretorio} alt="" />
-        </Link>
-      </div>
-      <div>
-        <Conteudo>
-          <Box>
-            <PhoneInTalkIcon sx={{ color: '#444444' }} />
-            <p>Central de vendas </p>
-          </Box>
-          <Box>
-            {usuario ? (
-              <Link to="/passaporte" className="link">
-                <PersonIcon sx={{ color: '#444444' }} />
-                <p>Acessar Passaporte</p>
-              </Link>
-            ) : (
-              <Link to="/login" className="link">
-                <PersonIcon sx={{ color: '#444444' }} />
-                <p>Iniciar Sessão</p>
-              </Link>
-            )}
-          </Box>
-          <Link to="/minhasviagens" className="link">
-            <Box>
-              <BackpackIcon sx={{ color: '#444444' }} />
-              <p>Minha viagens</p>
-            </Box>
+    <div className="navBarInternaBackground">
+      <NavbarContainer>
+        <div>
+          <Link to="/">
+            <Logo src={LogoDiretorio} alt="" />
           </Link>
-          <Box>
-            <HelpIcon sx={{ color: '#444444' }} />
-            <p>Ajuda</p>
-          </Box>
-        </Conteudo>
-      </div>
-    </NavbarContainer>
+        </div>
+        <div>
+          <Conteudo>
+            <Box>
+              <PhoneInTalkIcon sx={{ color: '#444444' }} />
+              <p>Central de vendas </p>
+            </Box>
+            <Box>
+              {usuario ? (
+                <Link to="/passaporte" className="link">
+                  <PersonIcon sx={{ color: '#444444' }} />
+                  <p>Acessar Passaporte</p>
+                </Link>
+              ) : (
+                <Link to="/login" className="link">
+                  <PersonIcon sx={{ color: '#444444' }} />
+                  <p>Iniciar Sessão</p>
+                </Link>
+              )}
+            </Box>
+            <Link to="/minhasviagens" className="link">
+              <Box>
+                <BackpackIcon sx={{ color: '#444444' }} />
+                <p>Minha viagens</p>
+              </Box>
+            </Link>
+            <Box>
+              <HelpIcon sx={{ color: '#444444' }} />
+              <p>Ajuda</p>
+            </Box>
+          </Conteudo>
+        </div>
+      </NavbarContainer>
+    </div>
   );
 };
 

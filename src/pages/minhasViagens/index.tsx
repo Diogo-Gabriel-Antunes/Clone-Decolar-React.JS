@@ -35,7 +35,7 @@ function filtraLista(minhasViagens: IMinhasViagens[] | any) {
   ListaParaFiltrar.sort((item1, item2) => {
     const data1 = new Date(item1.dataInicio);
     const data2 = new Date(item2.dataInicio);
-    return data1.getTime() - data2.getTime();
+    return data2.getTime() - data1.getTime();
   });
   return ListaParaFiltrar;
 }

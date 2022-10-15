@@ -15,7 +15,6 @@ import { HospedagemBox } from '../../Hospedagem/styledHospedagem';
 const AlugueisCasaCards = () => {
   const [casaAlugueis, setCasaAlugueis] = useState<ICasaAlugueis[]>();
   const parametros = useParams();
-  console.log(parametros);
   useEffect(() => {
     axios
       .get(`http://localhost:8080/alugueiscasa?destino=${parametros.destino}`)

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Formulario, Options } from '../../pages/home/stylesHome';
+import { Formulario, Options } from '../../../pages/home/stylesHome';
 
 export const OptionPassagens = styled(Options)<{
   width: number;

@@ -1,6 +1,6 @@
 import AcUnitIcon from '@mui/icons-material/AcUnit';
 import { Link } from 'react-router-dom';
-import ICarros from '../../interfaces/ICarros';
+import ICarros from '../../../interfaces/ICarros';
 import { CardBoxCarros } from './styleCardCarros';
 import DirectionsCarFilledIcon from '@mui/icons-material/DirectionsCarFilled';
 import PersonIcon from '@mui/icons-material/Person';

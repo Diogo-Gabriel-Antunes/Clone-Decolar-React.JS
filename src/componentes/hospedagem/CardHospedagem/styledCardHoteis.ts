@@ -76,6 +76,7 @@ export const CardBox = styled(Card)`
   }
   .botao {
     margin: 16px 4px;
+
     .link {
       text-decoration: none;
 
@@ -88,6 +89,7 @@ export const CardBox = styled(Card)`
         color: #fff;
         line-height: 36px;
         font-size: 14px;
+        cursor: pointer;
       }
     }
   }

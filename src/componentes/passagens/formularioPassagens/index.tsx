@@ -1,4 +1,4 @@
-import { BoxOpions, FormBox } from '../../pages/home/stylesHome';
+import { BoxOpions, FormBox } from '../../../pages/home/stylesHome';
 import { Button } from '@mui/material';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
@@ -108,7 +108,7 @@ const FormularioPassagens = () => {
                   type="date"
                   name=""
                   id=""
-                  disabled={semData}
+                  disabled={true}
                   className="data__input"
                   placeholder="Ida"
                   value={dataIda}
@@ -121,7 +121,7 @@ const FormularioPassagens = () => {
                   type="date"
                   name=""
                   id=""
-                  disabled={semData}
+                  disabled={true}
                   className="data__input__saida data__input"
                   placeholder="Volta"
                   value={dataVolta}
@@ -138,7 +138,7 @@ const FormularioPassagens = () => {
                   name=""
                   id=""
                   defaultValue={'Eco'}
-                  disabled={semData}
+                  disabled={true}
                   className=" Quartos__input "
                 />
                 <PersonIcon className="Pessoas__svg" />
@@ -148,7 +148,7 @@ const FormularioPassagens = () => {
                 <input
                   type="text"
                   defaultValue={2}
-                  disabled={semData}
+                  disabled={true}
                   className="Pessoas__input"
                 />
 

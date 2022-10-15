@@ -1,5 +1,4 @@
 import { Paper } from '@mui/material';
-import { height, PropsFor } from '@mui/system';
 import styled from 'styled-components';
 import { PassaporteBox } from '../../pages/passaporte/styledPassaporte';
 
@@ -57,6 +56,7 @@ export const CardQuartosBox = styled(PassaporteBox)<{
     padding: 40px 0px;
     width: 1280px;
   }
+
   .passaporte__container .carrossel__container {
     height: ${(props) =>
       props.alturaDoContainer ? `${props.alturaDoContainer}px` : ''};

@@ -1,4 +1,3 @@
-import { BoxOpions, FormBox } from '../../pages/home/stylesHome';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 import SearchIcon from '@mui/icons-material/Search';
@@ -6,6 +5,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@mui/material';
 import { FormularioCarrosBox } from './styledFormularioCarros';
+import { FormBox, BoxOpions } from '../../../pages/home/stylesHome';
 
 const FormularioCarros = () => {
   const [destino, setDestino] = useState('');

@@ -6,7 +6,7 @@ import {
   SeoBox,
 } from './stylesHome';
 import Footer from '../../componentes/Footer';
-import FormularioHospedagem from '../../componentes/FormularioHospedagem';
+import FormularioHospedagem from '../../componentes/hospedagem/FormularioHospedagem';
 import NavBarComponent from '../../componentes/navbar';
 import { useState } from 'react';
 

@@ -11,11 +11,11 @@ import {
   Radio,
   RadioGroup,
 } from '@mui/material';
-import CardCarros from '../../../componentes/cardCarros';
 import { useEffect, useState } from 'react';
 import ICarros from '../../../interfaces/ICarros';
 import axios from 'axios';
 import Footer from '../../../componentes/Footer';
+import CardCarros from '../../../componentes/carros/cardCarros';
 
 const PageCarros = () => {
   const [carros, setCarros] = useState<ICarros[]>();

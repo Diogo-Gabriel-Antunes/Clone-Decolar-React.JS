@@ -4,11 +4,11 @@ import {
   Condicoes,
   InfosBox,
   SeoBox,
-} from "../home/stylesHome";
-import Footer from "../../componentes/Footer";
+} from '../home/stylesHome';
+import Footer from '../../componentes/Footer';
 
-import NavBarComponent from "../../componentes/navbar";
-import FormularioPassagens from "../../componentes/formularioPassagens";
+import NavBarComponent from '../../componentes/navbar';
+import FormularioPassagens from '../../componentes/passagens/formularioPassagens';
 
 const Passagens = () => {
   return (
@@ -148,7 +148,7 @@ const Passagens = () => {
             Reserve sua viagem na maior agência de viagens online do Brasil
           </h2>
           <p className="texto">
-            {" "}
+            {' '}
             Reserve sua viagem no Decolar e garanta as melhores tarifas em
             passagens aéreas, hotéis, pacotes de viagem, cruzeiros e aluguel de
             carro. Somos a maior agência de viagens online da América Latina

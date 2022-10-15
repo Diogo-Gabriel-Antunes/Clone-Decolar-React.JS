@@ -1,8 +1,10 @@
 import { IPassagens } from '../../interfaces/IPassagens';
 import { CardPassagensBox } from './styledCardPassagens';
 import ConnectingAirportsIcon from '@mui/icons-material/ConnectingAirports';
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import { Link } from 'react-router-dom';
+
+import { TextField } from '@mui/material';
+import { useState } from 'react';
+import FormQtdPessoas from './FormQtdPessoas';
 
 interface props {
   passagens: IPassagens[] | undefined;
@@ -13,13 +15,20 @@ const CardPassagens = ({ passagens }: props) => {
     <div>
       {passagens
         ? passagens.map((item) => (
-            <CardPassagensBox elevation={8} sx={{ mb: 4 }} key={item.id}>
+            <CardPassagensBox
+              elevation={8}
+              sx={{ mb: 4, borderRadius: 4 }}
+              key={item.id}
+            >
               <div className="container__grid">
-                <img
-                  src={item.imagemCompanhia}
-                  alt=""
-                  className="imagemCompanhia"
-                />
+                <div>
+                  <img
+                    src={item.imagemCompanhia}
+                    alt=""
+                    className="imagemCompanhia"
+                  />
+                </div>
+
                 <div className="origem">
                   <p>
                     <ConnectingAirportsIcon /> IDA : {item.destino}
@@ -42,12 +51,7 @@ const CardPassagens = ({ passagens }: props) => {
                       currency: 'BRL',
                     })}
                   </p>
-                  <div className="seguinte__div">
-                    <Link to={`/passagens/${item.id}`}>
-                      <p className="seguinte">Seguinte</p>{' '}
-                      <ArrowForwardIosIcon />
-                    </Link>
-                  </div>
+                  <FormQtdPessoas passagem={item} />
                 </div>
               </div>
             </CardPassagensBox>

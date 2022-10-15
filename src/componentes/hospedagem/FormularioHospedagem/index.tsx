@@ -3,7 +3,7 @@ import {
   FormBox,
   Formulario,
   Options,
-} from '../../pages/home/stylesHome';
+} from '../../../pages/home/stylesHome';
 import { Button } from '@mui/material';
 import { Link } from 'react-router-dom';
 import { Dispatch, SetStateAction, useState } from 'react';
@@ -101,7 +101,7 @@ const FormularioHospedagem = ({ setDestino, destino }: props) => {
                   type="text"
                   name=""
                   id=""
-                  disabled={semData}
+                  disabled={true}
                   className="data__input"
                   placeholder="Entrada"
                 />
@@ -109,7 +109,7 @@ const FormularioHospedagem = ({ setDestino, destino }: props) => {
                   type="text"
                   name=""
                   id=""
-                  disabled={semData}
+                  disabled={true}
                   className="data__input__saida"
                   placeholder="Saida"
                 />
@@ -124,7 +124,7 @@ const FormularioHospedagem = ({ setDestino, destino }: props) => {
                   name=""
                   id=""
                   defaultValue={'1'}
-                  disabled={semData}
+                  disabled={true}
                   className="Quartos__input"
                 />
                 <PersonIcon className="Pessoas__svg" />
@@ -134,7 +134,7 @@ const FormularioHospedagem = ({ setDestino, destino }: props) => {
                 <input
                   type="text"
                   defaultValue={2}
-                  disabled={semData}
+                  disabled={true}
                   className="Pessoas__input"
                 />
 

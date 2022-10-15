@@ -263,7 +263,7 @@ export const AtracaoOpcoesBox = styled.div`
               width: 150px;
             }
             .input__Horario {
-              width: 85px;
+              width: 100px;
               padding: 0 12px;
             }
             .input__Pessoas {

@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import NavBarComponent from '../../../componentes/navbar';
 import IHospedagem from '../../../interfaces/IHospedagens';
 import { BackGrounImage, HospedagemIdContainer } from './styledHospedagemId';
@@ -14,15 +14,20 @@ import WifiIcon from '@mui/icons-material/Wifi';
 import FitnessCenterIcon from '@mui/icons-material/FitnessCenter';
 import TaskAltIcon from '@mui/icons-material/TaskAlt';
 import RemoveDoneIcon from '@mui/icons-material/RemoveDone';
-
 import QuartosCarroseul from '../../../componentes/QuartosCarrosel';
-import { CardQuartosBox } from '../../../componentes/QuartosCarrosel/StyledCardQuartos';
 import CarroseulInfosUteis from '../../../componentes/InfosUteis';
 import Footer from '../../../componentes/Footer';
+import CardReservaHospedagem from '../../../componentes/hospedagem/FormularioHospedagem/CardReservaHospedagem';
+import { IQuartos } from '../../../interfaces/IQuartos';
+import KingBedIcon from '@mui/icons-material/KingBed';
+import CreditCardIcon from '@mui/icons-material/CreditCard';
+
 const HospedagemId = () => {
   const [hospedagem, setHospedagem] = useState<IHospedagem | undefined>();
+  const [hospedagemSelecionada, setHospedagemSelecionada] = useState<
+    [IQuartos | undefined, string] | undefined
+  >();
   const parametros = useParams();
-  console.log(hospedagem);
   useEffect(() => {
     axios
       .get(`http://localhost:8080/hospedagem/${parametros.id}`)
@@ -271,6 +276,110 @@ const HospedagemId = () => {
               Informações úteis sobre {hospedagem?.nome}
             </h2>
             <CarroseulInfosUteis infos={hospedagem} />
+          </div>
+          <div className="reserva">
+            <div>
+              <h2 className="titulo">Reserva</h2>
+
+              {hospedagem?.quartos.slice(0, 3).map((item, index) => (
+                <CardReservaHospedagem
+                  selecionador={setHospedagemSelecionada}
+                  quarto={item}
+                  key={index}
+                />
+              ))}
+            </div>
+
+            <Paper className="pagamento__container">
+              <p className="pagamento__containerQtdNoites">
+                1 noite, 2 Pessoas
+              </p>
+              <div className="pagamento__container__valor">
+                <p className="pagamento__container__cifrao">R$</p>
+                {hospedagemSelecionada ? (
+                  <p className="pagamento__container__preco">
+                    {hospedagemSelecionada[0]?.preco.toLocaleString()}
+                  </p>
+                ) : (
+                  ''
+                )}
+              </div>
+              <div className="pagamento__container__impostos">
+                <p>Imposto inclusos</p>
+              </div>
+              <div className="pagamento__container__button">
+                <Link
+                  to={`quarto/${
+                    hospedagemSelecionada
+                      ? hospedagemSelecionada[0]
+                        ? hospedagemSelecionada[0].id
+                        : ''
+                      : ''
+                  }`}
+                  className="link"
+                >
+                  <Button
+                    variant="contained"
+                    sx={{
+                      borderRadius: 24,
+                      bgcolor: '#fa503f',
+                      width: 208,
+                    }}
+                  >
+                    Reservar agora
+                  </Button>
+                </Link>
+              </div>
+              <div className="formaDePagamento__container">
+                <div className="formaDePagamento">
+                  {hospedagemSelecionada ? (
+                    hospedagemSelecionada[1] === 'Pague para a hospedagem' ? (
+                      hospedagemSelecionada ? (
+                        <KingBedIcon />
+                      ) : (
+                        ''
+                      )
+                    ) : (
+                      <CreditCardIcon />
+                    )
+                  ) : (
+                    ''
+                  )}
+
+                  <p>
+                    {hospedagemSelecionada
+                      ? hospedagemSelecionada[1] === 'Pague para a hospedagem'
+                        ? hospedagemSelecionada
+                          ? hospedagemSelecionada[1]
+                          : ''
+                        : 'Em até 6x sem juros'
+                      : ''}
+                  </p>
+                </div>
+                <p className="formaDePagamento__descricao">
+                  {hospedagemSelecionada
+                    ? hospedagemSelecionada[1] === 'Pague para a hospedagem'
+                      ? hospedagemSelecionada
+                        ? 'A hospedagem é responsável por realizar a cobrança. Pagamento em reais.'
+                        : ''
+                      : 'Em até 6x sem juros'
+                    : ''}
+                </p>
+              </div>
+              <div className="infosReserva__Container">
+                <h5>Informação da sua reserva</h5>
+                <div>
+                  <TaskAltIcon /> Quarto superior
+                </div>
+                <div>
+                  <TaskAltIcon /> Café da manha
+                </div>
+                <div>
+                  <RemoveDoneIcon className="infosReserva__naocontem" /> Não
+                  permite realizar alteração ou cancelmentos
+                </div>
+              </div>
+            </Paper>
           </div>
         </div>
       </HospedagemIdContainer>

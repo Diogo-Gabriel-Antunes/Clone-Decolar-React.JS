@@ -1,14 +1,14 @@
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import { useRef } from 'react';
-import { IQuartos } from '../../interfaces/IQuartos';
-import { CardQuartos, CardQuartosBox } from './StyledCardQuartos';
-
 import TvIcon from '@mui/icons-material/Tv';
 import WifiIcon from '@mui/icons-material/Wifi';
 import AcUnitIcon from '@mui/icons-material/AcUnit';
 import HotTubIcon from '@mui/icons-material/HotTub';
 import SportsBarIcon from '@mui/icons-material/SportsBar';
+import { useRef } from 'react';
+import { IQuartos } from '../../interfaces/IQuartos';
+import { CardQuartos, CardQuartosBox } from './StyledCardQuartos';
+
 import { Link } from 'react-router-dom';
 
 interface Props {

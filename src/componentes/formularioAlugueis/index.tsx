@@ -49,7 +49,7 @@ const FormularioAlugueis = () => {
                   type="date"
                   name=""
                   id=""
-                  disabled={semData}
+                  disabled={true}
                   className="data__input"
                   placeholder="Entrada"
                   value={dataEntrada}
@@ -62,7 +62,7 @@ const FormularioAlugueis = () => {
                   type="date"
                   name=""
                   id=""
-                  disabled={semData}
+                  disabled={true}
                   className="data__input data__input__saida"
                   placeholder="Saida"
                   value={dataSaida}
@@ -79,7 +79,7 @@ const FormularioAlugueis = () => {
                   name=""
                   id=""
                   defaultValue={'1'}
-                  disabled={semData}
+                  disabled={true}
                   className="Quartos__input"
                 />
                 <PersonIcon className="Pessoas__svg" />
@@ -89,7 +89,7 @@ const FormularioAlugueis = () => {
                 <input
                   type="text"
                   defaultValue={2}
-                  disabled={semData}
+                  disabled={true}
                   className="Pessoas__input"
                 />
 

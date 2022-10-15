@@ -73,7 +73,7 @@ const CardMinhasViagens = ({ minhasViagens }: Props) => {
                     <StarIcon />
                     <StarIcon />
                   </div>
-                  <p className="sobre">{item.sobre}</p>
+                  <p className="sobre">{item.sobre.substring(0, 150)}...</p>
                 </div>
               </HoteisMinhasViagensBox>
             ) : (

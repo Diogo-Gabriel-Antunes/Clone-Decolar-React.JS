@@ -1,5 +1,5 @@
 import { Paper } from '@mui/material';
-import IAtracoes from '../../interfaces/IAtracoes';
+import IAtracoes from '../../../interfaces/IAtracoes';
 import { CardAtracoesBox } from './styledCardAtracoes';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 import CreditCardIcon from '@mui/icons-material/CreditCard';

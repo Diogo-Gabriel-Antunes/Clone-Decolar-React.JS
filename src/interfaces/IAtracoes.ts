@@ -1,4 +1,5 @@
 import { IImagens } from './IMagens';
+import { IOpcoesAtracoes } from './IOpcoesAtracoes';
 
 export default interface IAtracoes {
   id: number;
@@ -14,4 +15,5 @@ export default interface IAtracoes {
   descricao: string;
   duracao: string;
   quantidadeDeDias: number;
+  opcoes: IOpcoesAtracoes[];
 }

@@ -1,4 +1,4 @@
-import IHospedagem from '../../interfaces/IHospedagens';
+import IHospedagem from '../../../interfaces/IHospedagens';
 import { CardBox } from './styledCardHoteis';
 import StarIcon from '@mui/icons-material/Star';
 import { Link } from 'react-router-dom';

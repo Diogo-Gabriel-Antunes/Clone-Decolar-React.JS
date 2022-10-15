@@ -7,7 +7,10 @@ export interface IQuartos {
   wifi: boolean;
   arCondicionado: boolean;
   frigobar: boolean;
-  quartosHospedagemId: number;
+  preco: number;
+  quartosHospedagemId?: number;
+  quartoAlugueisCasaId?: number;
   createdAt: string;
   updatedAt: string;
+  AreaDoQuarto: number;
 }

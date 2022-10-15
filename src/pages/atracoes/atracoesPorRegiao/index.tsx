@@ -18,10 +18,10 @@ import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import ConfirmationNumberIcon from '@mui/icons-material/ConfirmationNumber';
 
 import axios from 'axios';
-import CardAtracoes from '../../../componentes/cardAtracoes';
+import CardAtracoes from '../../../componentes/atracoes/cardAtracoes';
 import IAtracoes from '../../../interfaces/IAtracoes';
 import Footer from '../../../componentes/Footer';
-import FormularioAtracoes from '../../../componentes/FormularioPasseios';
+import FormularioAtracoes from '../../../componentes/atracoes/FormularioPasseios';
 
 const AtracoesPorRegiao = () => {
   const parametros = useParams();

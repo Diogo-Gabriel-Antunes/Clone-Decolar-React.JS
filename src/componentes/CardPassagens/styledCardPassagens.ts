@@ -6,12 +6,18 @@ export const CardPassagensBox = styled(Paper)`
   .container__grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
+
     img {
       width: 140px;
+
+      height: 140px;
     }
+
     .Volta {
+      display: flex;
       flex-direction: column;
       align-items: center;
+      height: 100%;
       svg {
         width: 20px;
       }
@@ -24,8 +30,12 @@ export const CardPassagensBox = styled(Paper)`
       }
     }
     .origem {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100%;
       p {
-        width: 300px;
+        width: 154px;
         margin: 8px 0;
         display: flex;
         align-items: center;
@@ -42,6 +52,18 @@ export const CardPassagensBox = styled(Paper)`
         align-items: center;
         justify-content: flex-start;
         color: #888;
+      }
+      .formQtdPessoas {
+        display: flex;
+        flex-direction: column;
+        label {
+          font-size: 12px;
+          color: #888;
+        }
+        input {
+          width: 32px;
+          margin-top: 4px;
+        }
       }
     }
     .seguinte__div {

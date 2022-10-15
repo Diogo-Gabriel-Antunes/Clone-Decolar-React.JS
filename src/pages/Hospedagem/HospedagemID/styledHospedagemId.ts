@@ -273,5 +273,92 @@ export const HospedagemIdContainer = styled.div`
         }
       }
     }
+    .reserva {
+      margin-top: 80px;
+      display: flex;
+      .pagamento__container {
+        color: #444;
+        p {
+          padding: 0;
+          margin: 0;
+        }
+        margin-top: 72px;
+        margin-left: 8px;
+        padding: 16px;
+        width: 250px;
+        height: 509px;
+        .pagamento__containerQtdNoites {
+          font-size: 12px;
+        }
+        .pagamento__container__valor {
+          display: flex;
+          margin-top: 4px;
+          align-items: center;
+          .pagamento__container__cifrao {
+            font-size: 16px;
+            padding-top: 6px;
+          }
+          .pagamento__container__preco {
+            font-size: 24px;
+          }
+        }
+        .pagamento__container__impostos {
+          font-size: 12px;
+          color: #888;
+          margin-top: 4px;
+          margin-bottom: 20px;
+        }
+        .pagamento__container__button {
+          border-bottom: 1px solid #ccc;
+          padding-bottom: 16px;
+          width: 100%;
+        }
+        .formaDePagamento__container {
+          border-bottom: 1px solid #ccc;
+          padding-bottom: 16px;
+          .formaDePagamento {
+            margin-top: 16px;
+            display: flex;
+            align-items: center;
+            p {
+              font-size: 14px;
+              color: #444;
+              width: 180px;
+            }
+            svg {
+              padding-bottom: 6px;
+              margin-right: 8px;
+              color: #4300d2;
+            }
+          }
+          .formaDePagamento__descricao {
+            font-size: 12px;
+            color: #666;
+            margin-top: 12px;
+          }
+        }
+        .infosReserva__Container {
+          color: #444;
+          h5 {
+            font-size: 16px;
+          }
+          div {
+            margin-top: 16px;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            svg {
+              width: 16px;
+              color: green;
+              margin-right: 6px;
+            }
+            .infosReserva__naocontem {
+              color: red;
+              padding-bottom: 20px;
+            }
+          }
+        }
+      }
+    }
   }
 `;

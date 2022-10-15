@@ -1,10 +1,8 @@
-import { CardQuartosBox } from '../QuartosCarrosel/StyledCardQuartos';
-import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { useRef } from 'react';
 import IHospedagem from '../../interfaces/IHospedagens';
 import { Paper } from '@mui/material';
 import ICasaAlugueis from '../../interfaces/ICasaAlugueis';
+import { InfosUteisCarrousel } from './StyledInfosUteis';
 
 interface Props {
   infos: IHospedagem | ICasaAlugueis | undefined;
@@ -12,25 +10,9 @@ interface Props {
 
 const CarroseulInfosUteis = ({ infos }: Props) => {
   const carousel = useRef<HTMLDivElement | null>(null);
-  const handleRightClick = (
-    e: React.MouseEvent<HTMLButtonElement, MouseEvent>
-  ) => {
-    e.preventDefault();
-    console.log(carousel.current?.offsetWidth);
-    if (carousel.current) {
-      carousel.current.scrollLeft += carousel.current.offsetWidth;
-    }
-  };
-  const handleLeftClick = (
-    e: React.MouseEvent<HTMLButtonElement, MouseEvent>
-  ) => {
-    e.preventDefault();
-    if (carousel.current) {
-      carousel.current.scrollLeft -= carousel.current.offsetWidth;
-    }
-  };
+
   return (
-    <CardQuartosBox alturaDoContainer={53}>
+    <InfosUteisCarrousel alturaDoContainer={53}>
       <div className="passaporte__container">
         <div className="carrossel__container">
           <div className="carrossel__wrapper" ref={carousel}>
@@ -62,7 +44,7 @@ const CarroseulInfosUteis = ({ infos }: Props) => {
           </div>
         </div>
       </div>
-    </CardQuartosBox>
+    </InfosUteisCarrousel>
   );
 };
 

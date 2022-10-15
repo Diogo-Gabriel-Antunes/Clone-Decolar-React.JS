@@ -4,7 +4,6 @@ import BedIcon from '@mui/icons-material/Bed';
 import AirplanemodeActiveIcon from '@mui/icons-material/AirplanemodeActive';
 import HouseIcon from '@mui/icons-material/House';
 import ConfirmationNumberIcon from '@mui/icons-material/ConfirmationNumber';
-import DirectionsCarIcon from '@mui/icons-material/DirectionsCar';
 import { Link } from 'react-router-dom';
 import NavBarInterna from './navbarInterna';
 
@@ -87,22 +86,6 @@ const NavBarComponent = (props: props) => {
             <BoxOpcoes>
               <ConfirmationNumberIcon sx={{ color: '#444444' }} />
               <p>Passeios</p>
-            </BoxOpcoes>
-          )}
-        </Link>
-
-        <Link to={'/carros'} className="link">
-          {props.carros ? (
-            <BoxOpcoes>
-              <DirectionsCarIcon
-                sx={{ color: '#fff', bgcolor: '#270570', borderRadius: 99 }}
-              />
-              <p className="ativo">Carros</p>
-            </BoxOpcoes>
-          ) : (
-            <BoxOpcoes>
-              <DirectionsCarIcon sx={{ color: '#444444' }} />
-              <p>Carros</p>
             </BoxOpcoes>
           )}
         </Link>

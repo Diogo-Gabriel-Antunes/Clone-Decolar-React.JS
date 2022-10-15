@@ -2,10 +2,10 @@ import { Card } from '@mui/material';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import CardHospedagem from '../../componentes/CardHoteis';
 
 import Footer from '../../componentes/Footer';
-import FormularioHospedagem from '../../componentes/FormularioHospedagem';
+import CardHospedagem from '../../componentes/hospedagem/CardHospedagem';
+import FormularioHospedagem from '../../componentes/hospedagem/FormularioHospedagem';
 import NavBarComponent from '../../componentes/navbar';
 import IHospedagem from '../../interfaces/IHospedagens';
 import { HospedagemBox } from './styledHospedagem';

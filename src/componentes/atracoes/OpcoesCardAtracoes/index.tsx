@@ -1,33 +1,36 @@
 import { Button } from '@mui/material';
-import IAtracoes from '../../interfaces/IAtracoes';
+import IAtracoes from '../../../interfaces/IAtracoes';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import CheckIcon from '@mui/icons-material/Check';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { IOpcoesAtracoes } from '../../../interfaces/IOpcoesAtracoes';
 
 interface Props {
+  opcoes: IOpcoesAtracoes | undefined;
   atracao: IAtracoes | undefined;
-  arrayQuantidadeDeDias: number | undefined;
 }
-const OpcoesCardAtracoes = ({ atracao, arrayQuantidadeDeDias }: Props) => {
+const OpcoesCardAtracoes = ({ opcoes, atracao }: Props) => {
   const [data, setData] = useState('');
-  const [horario, setHorario] = useState('');
+  const [horario, setHorario] = useState('08:00');
   const [pessoas, setPessoas] = useState('');
+  console.log(opcoes);
   return (
-    <div key={arrayQuantidadeDeDias}>
+    <div>
       <div className="opcoes__card">
         <div className="opcoes__card__containerFirst">
           <h4>
-            {arrayQuantidadeDeDias
-              ? arrayQuantidadeDeDias + 1 === 1
-                ? `${arrayQuantidadeDeDias + 1} dia`
-                : `${arrayQuantidadeDeDias + 1} dias`
+            {opcoes?.qtdDias
+              ? opcoes?.qtdDias === 1
+                ? `${opcoes?.qtdDias} dia`
+                : `${opcoes?.qtdDias} dias`
               : ''}
             {'   '}
             {atracao?.nome}
           </h4>
           <div className="opcoes__card__duracaoBox">
             <p className="opcoes__card__duracao">
-              <AccessTimeIcon /> Duração : {atracao?.duracao}.
+              <AccessTimeIcon /> Duração : {opcoes?.Duracao}.
             </p>
             <p>Disponível: Todos os dias</p>
           </div>
@@ -77,21 +80,44 @@ const OpcoesCardAtracoes = ({ atracao, arrayQuantidadeDeDias }: Props) => {
             </p>
             <div className="opcoes__card__preco">
               <p className="opcoes__card__preco__cifrao">R$</p>
-              <p className="opcoes__card__preco__valor">{atracao?.preco}</p>
+              <p className="opcoes__card__preco__valor">{opcoes?.preco}</p>
             </div>
-            <Button
-              variant="contained"
-              sx={{
-                width: 173,
-                height: 36,
-                mx: 1,
-                bgcolor: '#4300D2',
-                borderRadius: 24,
-                my: 2,
-              }}
-            >
-              Escolher data
-            </Button>
+            {data === '' ? (
+              <Button
+                variant="contained"
+                sx={{
+                  width: 173,
+                  height: 36,
+                  mx: 1,
+                  bgcolor: '#4300D2',
+                  borderRadius: 24,
+                  my: 2,
+                }}
+              >
+                Escolher data
+              </Button>
+            ) : (
+              <Link
+                to={`reserva/${atracao?.id}/${opcoes?.id}`}
+                className="link"
+              >
+                {' '}
+                <Button
+                  variant="contained"
+                  color="success"
+                  sx={{
+                    width: 173,
+                    height: 36,
+                    mx: 1,
+
+                    borderRadius: 24,
+                    my: 2,
+                  }}
+                >
+                  Selecionar
+                </Button>
+              </Link>
+            )}
           </div>
           <div className="opcoes__card__pontos">
             <img
@@ -99,7 +125,7 @@ const OpcoesCardAtracoes = ({ atracao, arrayQuantidadeDeDias }: Props) => {
               alt=""
             />
             <p>
-              Voce ganha <strong> {atracao?.preco} pontos</strong>
+              Voce ganha <strong> {opcoes?.preco} pontos</strong>
             </p>
           </div>
         </div>
