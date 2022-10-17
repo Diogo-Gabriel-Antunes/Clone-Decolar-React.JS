@@ -1,46 +1,95 @@
-# Getting Started with Create React App
+# App com entuito educacional
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Foi feita no entuido de aprender mais sobre autenticação,estilização entre outros topicos.
 
-## Available Scripts
+Todo o site foi baseado no layout da decolar: www.decolar.com
 
-In the project directory, you can run:
+Um site extenso e bem cansativo, não consegui reutilizar muita coisa, o que é notavel 
 
-### `npm start`
+Pela quantidade de components criados.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Mas irei aprender melhor como reutilizar components e como deixar o codigo mais limpo.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+# Tecnologias utilizadas
 
-### `npm test`
+-date-io/date-fns
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+-date-io/dayjs
 
-### `npm run build`
+-emotion/react
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+-emotion/styled
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+-mui/icons-material
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+-mui/lab
 
-### `npm run eject`
+-mui/material
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+-mui/x-date-pickers
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+-testing-library/jest-dom
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+-testing-library/react
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+-testing-library/user-event
 
-## Learn More
+-types/jest
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+-types/node
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+-types/react
+
+-types/react-dom
+
+-axios
+
+-date-fns
+
+-dayjs
+
+-jwt-decode
+
+-nookies
+
+-react
+
+-react-dom
+
+-react-elastic-carousel
+
+-react-router-dom
+
+-react-scripts
+
+-styled-components
+
+-typescript
+
+-web-vitals
+
+# Como utilizar
+
+1.Faça download dos arquivos
+
+2.Tenha instalado o node.js na sua maquina
+
+3.Tenha tambem algum gerenciador de pacote como por exemplo: npm ou yarn
+
+4.Faça download das dependencias 
+
+exemplo: 
+<h3>npm install</h3>
+
+5.Apos isso rode o projeto 
+
+exemplo: 
+<h3>npm run start</h3>
+
+# Agradecimentos Finais
+
+Muito obrigado a todos que tiraram alguns minutos do seu dia para me tirar alguma duvida.
+
+Muito bom ver que a area de tecnologia não é como outras que vive uma guerra entra as pessoas.
+
+Se gostou não esqueça de deixar sua star, desde ja Muito obrigado
